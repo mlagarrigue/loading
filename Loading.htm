@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta http-equiv=Content-Type content=text/html;charset=utf-8 />
+    <title>Chargement</title>
+    <script type="text/javascript" src="cordova.webos.js"></script>  
+    <script type="text/javascript" src="configuration.js"></script>  
+    <style>
+        body {
+            z-index: 0;
+            width: 3840px;
+            height: 600px;
+            background: linear-gradient(135deg, #4c4c4c 0px, #595959 461px, #666666 960px, #474747 1100px, #2c2c2c 1280px, #000000 1300px, #2b2b2b 1310px, #2b2b2b 1320px, #424242 3072px, #4c4c4c 3840px, #ffff 3841px);
+            background-repeat: no-repeat;
+
+        }
+
+        @font-face {
+            font-family: 'good_timesregular';
+            src: url('./good_times_rg-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MonospaceTypewriter';
+            src: url('./MonospaceTypewriter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .loading {
+            font-family: 'good_timesregular';
+            font-size: 150px;
+            padding: 20px;
+            width: 1300px;
+            height: 219px;
+            animation: colorchange 4s infinite;
+            text-shadow: 2px 2px 0px rgba(58, 58, 58, .5);
+        }
+
+        .console {
+            /* font-family: 'good_timesregular'; */
+            /* font-size: 58px; */
+            font-family: 'MonospaceTypewriter';
+            font-size: 12px;
+
+            color: ivory;
+            margin: 0px 2000px;
+            padding: 17px;
+            width: 1790px;
+            height: 276px;
+            background-color: rgba(0, 0, 0, .7)
+                /* animation: colorchange 4s infinite; */
+                /* text-shadow: 2px 2px 0px rgba(58, 58, 58, .5); */
+        }
+
+        @keyframes colorchange {
+            0% {
+                background: linear-gradient(135deg, #737373 0%, #ebebeb 24%, #ffffff 51%, #a6a6a6 71%, #737373 100%, #737373 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            2% {
+                background: linear-gradient(135deg, #767676 0%, #737373 2%, #ebebeb 26%, #ffffff 53%, #a6a6a6 73%, #767676 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            4% {
+                background: linear-gradient(135deg, #7A7A7A 0%, #737373 4%, #ebebeb 28%, #ffffff 55%, #a6a6a6 75%, #7A7A7A 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            6% {
+                background: linear-gradient(135deg, #7D7D7D 0%, #737373 6%, #ebebeb 30%, #ffffff 57%, #a6a6a6 77%, #7D7D7D 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            8% {
+                background: linear-gradient(135deg, #818181 0%, #737373 8%, #ebebeb 32%, #ffffff 59%, #a6a6a6 79%, #818181 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            10% {
+                background: linear-gradient(135deg, #848484 0%, #737373 10%, #ebebeb 34%, #ffffff 61%, #a6a6a6 81%, #848484 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            12% {
+                background: linear-gradient(135deg, #888888 0%, #737373 12%, #ebebeb 36%, #ffffff 63%, #a6a6a6 83%, #888888 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            14% {
+                background: linear-gradient(135deg, #8B8B8B 0%, #737373 14%, #ebebeb 38%, #ffffff 65%, #a6a6a6 85%, #8B8B8B 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            16% {
+                background: linear-gradient(135deg, #8F8F8F 0%, #737373 16%, #ebebeb 40%, #ffffff 67%, #a6a6a6 87%, #8F8F8F 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            18% {
+                background: linear-gradient(135deg, #929292 0%, #737373 18%, #ebebeb 42%, #ffffff 69%, #a6a6a6 89%, #929292 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            20% {
+                background: linear-gradient(135deg, #969696 0%, #737373 20%, #ebebeb 44%, #ffffff 71%, #a6a6a6 91%, #969696 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            22% {
+                background: linear-gradient(135deg, #999999 0%, #737373 22%, #ebebeb 46%, #ffffff 73%, #a6a6a6 93%, #999999 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            24% {
+                background: linear-gradient(135deg, #9D9D9D 0%, #737373 24%, #ebebeb 48%, #ffffff 75%, #a6a6a6 95%, #9D9D9D 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            26% {
+                background: linear-gradient(135deg, #A0A0A0 0%, #737373 26%, #ebebeb 50%, #ffffff 77%, #a6a6a6 97%, #A0A0A0 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            28% {
+                background: linear-gradient(135deg, #A4A4A4 0%, #737373 28%, #ebebeb 52%, #ffffff 79%, #a6a6a6 99%, #A4A4A4 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            30% {
+                background: linear-gradient(135deg, #ABABAB 0%, #a6a6a6 1%, #737373 30%, #ebebeb 54%, #ffffff 81%, #ABABAB 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            32% {
+                background: linear-gradient(135deg, #B3B3B3 0%, #a6a6a6 3%, #737373 32%, #ebebeb 56%, #ffffff 83%, #B3B3B3 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            34% {
+                background: linear-gradient(135deg, #BCBCBC 0%, #a6a6a6 5%, #737373 34%, #ebebeb 58%, #ffffff 85%, #BCBCBC 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            36% {
+                background: linear-gradient(135deg, #C5C5C5 0%, #a6a6a6 7%, #737373 36%, #ebebeb 60%, #ffffff 87%, #C5C5C5 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            38% {
+                background: linear-gradient(135deg, #CECECE 0%, #a6a6a6 9%, #737373 38%, #ebebeb 62%, #ffffff 89%, #CECECE 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            40% {
+                background: linear-gradient(135deg, #D7D7D7 0%, #a6a6a6 11%, #737373 40%, #ebebeb 64%, #ffffff 91%, #D7D7D7 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            42% {
+                background: linear-gradient(135deg, #E0E0E0 0%, #a6a6a6 13%, #737373 42%, #ebebeb 66%, #ffffff 93%, #E0E0E0 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            44% {
+                background: linear-gradient(135deg, #E9E9E9 0%, #a6a6a6 15%, #737373 44%, #ebebeb 68%, #ffffff 95%, #E9E9E9 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            46% {
+                background: linear-gradient(135deg, #F2F2F2 0%, #a6a6a6 17%, #737373 46%, #ebebeb 70%, #ffffff 97%, #F2F2F2 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            48% {
+                background: linear-gradient(135deg, #FBFBFB 0%, #a6a6a6 19%, #737373 48%, #ebebeb 72%, #ffffff 99%, #FBFBFB 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            50% {
+                background: linear-gradient(135deg, #FCFCFC 0%, #ffffff 1%, #a6a6a6 21%, #737373 50%, #ebebeb 74%, #FCFCFC 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            52% {
+                background: linear-gradient(135deg, #FDFDFD 0%, #ffffff 3%, #a6a6a6 23%, #737373 52%, #ebebeb 76%, #FDFDFD 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            54% {
+                background: linear-gradient(135deg, #FBFBFB 0%, #ffffff 5%, #a6a6a6 25%, #737373 54%, #ebebeb 78%, #FBFBFB 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            56% {
+                background: linear-gradient(135deg, #FAFAFA 0%, #ffffff 7%, #a6a6a6 27%, #737373 56%, #ebebeb 80%, #FAFAFA 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            58% {
+                background: linear-gradient(135deg, #F8F8F8 0%, #ffffff 9%, #a6a6a6 29%, #737373 58%, #ebebeb 82%, #F8F8F8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            60% {
+                background: linear-gradient(135deg, #F7F7F7 0%, #ffffff 11%, #a6a6a6 31%, #737373 60%, #ebebeb 84%, #F7F7F7 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            62% {
+                background: linear-gradient(135deg, #F5F5F5 0%, #ffffff 13%, #a6a6a6 33%, #737373 62%, #ebebeb 86%, #F5F5F5 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            64% {
+                background: linear-gradient(135deg, #F4F4F4 0%, #ffffff 15%, #a6a6a6 35%, #737373 64%, #ebebeb 88%, #F4F4F4 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            66% {
+                background: linear-gradient(135deg, #F2F2F2 0%, #ffffff 17%, #a6a6a6 37%, #737373 66%, #ebebeb 90%, #F2F2F2 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            68% {
+                background: linear-gradient(135deg, #F1F1F1 0%, #ffffff 19%, #a6a6a6 39%, #737373 68%, #ebebeb 92%, #F1F1F1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            70% {
+                background: linear-gradient(135deg, #EFEFEF 0%, #ffffff 21%, #a6a6a6 41%, #737373 70%, #ebebeb 94%, #EFEFEF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            72% {
+                background: linear-gradient(135deg, #EEEEEE 0%, #ffffff 23%, #a6a6a6 43%, #737373 72%, #ebebeb 96%, #EEEEEE 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            74% {
+                background: linear-gradient(135deg, #ECECEC 0%, #ffffff 25%, #a6a6a6 45%, #737373 74%, #ebebeb 98%, #ECECEC 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            76% {
+                background: linear-gradient(135deg, #EBEBEB 0%, #ffffff 27%, #a6a6a6 47%, #737373 76%, #ebebeb 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            78% {
+                background: linear-gradient(135deg, #E1E1E1 0%, #ebebeb 2%, #ffffff 29%, #a6a6a6 49%, #737373 78%, #E1E1E1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            80% {
+                background: linear-gradient(135deg, #D7D7D7 0%, #ebebeb 4%, #ffffff 31%, #a6a6a6 51%, #737373 80%, #D7D7D7 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            82% {
+                background: linear-gradient(135deg, #CDCDCD 0%, #ebebeb 6%, #ffffff 33%, #a6a6a6 53%, #737373 82%, #CDCDCD 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            84% {
+                background: linear-gradient(135deg, #C3C3C3 0%, #ebebeb 8%, #ffffff 35%, #a6a6a6 55%, #737373 84%, #C3C3C3 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            86% {
+                background: linear-gradient(135deg, #B9B9B9 0%, #ebebeb 10%, #ffffff 37%, #a6a6a6 57%, #737373 86%, #B9B9B9 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            88% {
+                background: linear-gradient(135deg, #AFAFAF 0%, #ebebeb 12%, #ffffff 39%, #a6a6a6 59%, #737373 88%, #AFAFAF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            90% {
+                background: linear-gradient(135deg, #A5A5A5 0%, #ebebeb 14%, #ffffff 41%, #a6a6a6 61%, #737373 90%, #A5A5A5 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            92% {
+                background: linear-gradient(135deg, #9B9B9B 0%, #ebebeb 16%, #ffffff 43%, #a6a6a6 63%, #737373 92%, #9B9B9B 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            94% {
+                background: linear-gradient(135deg, #919191 0%, #ebebeb 18%, #ffffff 45%, #a6a6a6 65%, #737373 94%, #919191 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            96% {
+                background: linear-gradient(135deg, #878787 0%, #ebebeb 20%, #ffffff 47%, #a6a6a6 67%, #737373 96%, #878787 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            98% {
+                background: linear-gradient(135deg, #7D7D7D 0%, #ebebeb 22%, #ffffff 49%, #a6a6a6 69%, #737373 98%, #7D7D7D 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            100% {
+                background: linear-gradient(135deg, #737373 0%, #ebebeb 24%, #ffffff 51%, #a6a6a6 71%, #737373 100%, #737373 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='loading'>
+        Chargement
+    </div>
+    <div class='console' id='console'>
+        <div class='consoleID'>id </div>
+        <div class='consoleMode'>mode</div>
+        <div class='consoleScreen'>screen</div>
+        <div class='consoleTime'>Time</div>
+    </div>
+    <script>
+        document.getElementById('console').innerText = 'test';
+        function setPictureMode() {
+            var options = {};
+            options.mode = Configuration.PictureMode.VIVID;
+
+            function successCb() {
+                // Do something
+            }
+
+            function failureCb(cbObject) {
+                var errorCode = cbObject.errorCode;
+                var errorText = cbObject.errorText;
+
+                console.log("Error Code [" + errorCode + "]: " + errorText);
+            }
+
+            var configuration = new Configuration();
+            configuration.setPictureMode(successCb, failureCb, options);
+        }
+
+        function setCurrentTime() {
+            var options = {};
+            options.year = 2014;
+            options.month = 1;
+            options.day = 6;
+            options.hour = 14;
+            options.minute = 40;
+            options.sec = 50;
+            options.ntp = false;
+
+            function successCb() {
+                // Do something
+            }
+
+            function failureCb(cbObject) {
+                var errorCode = cbObject.errorCode;
+                var errorText = cbObject.errorText;
+
+                console.log("Error Code [" + errorCode + "]: " + errorText);
+            }
+
+            var configuration = new Configuration();
+            configuration.setCurrentTime(successCb, failureCb, options);
+        }
+
+
+        Configuration.getCurrentTime(successCallback, errorCallback)
+
+        function getPlatformInfo() {
+            function successCb(cbObject) {
+                console.log("[Platform Info] : " + JSON.stringify(cbObject));
+
+        // Do something
+        ...
+            }
+
+            function failureCb(cbObject) {
+                var errorCode = cbObject.errorCode;
+                var errorText = cbObject.errorText;
+
+                console.log("Error Code [" + errorCode + "]: " + errorText);
+            }
+
+            var deviceInfo = new DeviceInfo();
+            deviceInfo.getPlatformInfo(successCb, failureCb);
+        }
+
+        function getPlatformInfo() {
+            function successCb(cbObject) {
+                console.log("[Platform Info] : " + JSON.stringify(cbObject));
+
+        // Do something
+        ...
+            }
+
+            function failureCb(cbObject) {
+                var errorCode = cbObject.errorCode;
+                var errorText = cbObject.errorText;
+
+                console.log("Error Code [" + errorCode + "]: " + errorText);
+            }
+
+            var deviceInfo = new DeviceInfo();
+            deviceInfo.getPlatformInfo(successCb, failureCb);
+        }
+
+
+
+
+
+
+        xhr = new XMLHttpRequest();
+        xhr.open("GET", "mon.php", true);
+    </script>
+
+
+</body>
+
+</html>
